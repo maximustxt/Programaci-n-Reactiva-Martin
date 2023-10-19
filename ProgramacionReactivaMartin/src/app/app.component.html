@@ -1,0 +1,21 @@
+<!-------------- USO DE PIPE ASYNC ----------------->
+
+<ng-container *ngFor="let post of PostObservable$ | async">
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.body }}</p>
+  <hr />
+</ng-container>
+
+<!--------------- USO DE LA PROMESA  --------------->
+
+<ng-container *ngIf="PostPromise.length">
+  <section *ngFor="let post of PostPromise">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+    <hr />
+  </section>
+</ng-container>
+
+<button (click)="SubirDatos()">Obtener datos desde el Observable</button>
+
+<button (click)="BotonGetPostPromise()">Obtener datos desde Promise</button>
