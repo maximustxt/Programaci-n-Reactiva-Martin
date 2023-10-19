@@ -50,7 +50,7 @@ export class AppComponent implements OnInit, OnDestroy {
   //*- Metodo para subir los datos de la Api a nuestro Subject :
 
   SubirDatos() {
-    this.ServicioUsuario.SendUsers();
+    this.ServicioUsuario.SendPost();
   }
 
   //*- Nos desuscribimos del Observable :

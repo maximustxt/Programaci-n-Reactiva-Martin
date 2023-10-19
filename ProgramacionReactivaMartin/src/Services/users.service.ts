@@ -14,18 +14,18 @@ export class UsersService {
   //?- OBSERVABLES :
 
   //*- Creacion de Subject :
-  Users$ = new BehaviorSubject<IPost[]>([]);
+  Posts$ = new BehaviorSubject<IPost[]>([]);
 
   //*- Enviar los datos al Subject :
-  SendUsers() {
+  SendPost() {
     this.http
       .get('https://jsonplaceholder.typicode.com/posts')
-      .subscribe((Posteos: any) => this.Users$.next(Posteos));
+      .subscribe((Posteos: any) => this.Posts$.next(Posteos));
   }
 
   //*- Obtener el Subject :
   getPost(): Subject<IPost[]> {
-    return this.Users$;
+    return this.Posts$;
   }
 
   //?- PROMESAS :
